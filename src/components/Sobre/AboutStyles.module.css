@@ -1,0 +1,40 @@
+/* src/components/sessoes/AboutStyles.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem; /* Aumentado o padding no topo e base */
+  background-color: #ffffff; /* Fundo branco */
+}
+
+.sectionTitle {
+  font-family: 'Arial', sans-serif; /* Fonte mais estilizada */
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #222; /* Tom mais escuro para contraste */
+}
+
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.profileImg {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc; /* Adicionei uma borda leve */
+}
+
+.aboutText {
+  max-width: 600px; /* Mais largura para texto */
+  font-family: 'Verdana', sans-serif; /* Nova fonte */
+  font-size: 1.2rem;
+  line-height: 1.8; /* Espaçamento entre linhas maior */
+  color: #444;
+}

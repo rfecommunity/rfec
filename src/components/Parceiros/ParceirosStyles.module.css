@@ -1,0 +1,72 @@
+.container {
+    padding: 8rem 2rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.partnerGroup {
+    display: flex;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.partner {
+    max-width: 150px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.partnerName {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #0070f3;
+    margin-top: 0.5rem;
+}
+
+.navButton {
+    font-size: 2rem;
+    color: #0070f3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navButton:hover {
+    color: #005bb5;
+}
