@@ -1,0 +1,7 @@
+build
+.next
+out
+node_modules
+.husky
+.idea
+.vscode
