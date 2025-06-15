@@ -10,9 +10,11 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-auto-scroll": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.475.0",
     "next": "^15.3.3",
     "react": "^19.1.0",
