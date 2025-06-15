@@ -1,40 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# RFEC
 
-## Getting Started
+![Next.js Version](https://img.shields.io/badge/next.js-15.3.3-blue)
+![React Version](https://img.shields.io/badge/react-19.1.0-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![shadcn/ui](https://img.shields.io/badge/shadcn/ui-2.3.0-blue)
 
-First, run the development server:
+A modern application built with Next.js 15 and React 19, featuring Turbopack for ultra-fast development and Tailwind CSS for styling.
+
+## ✨ Features
+
+- 🖥 shadcn/ui Component Library - Accessible, customizable components built with Radix UI primitives
+- ⚡ Next.js 15 with Turbopack for blazing fast development
+- 🎨 Tailwind CSS with animations and merge utilities
+- 🔍 Strict ESLint + Prettier code quality setup
+- 🐶 Husky Git hooks with commit message validation
+- 🛠 TypeScript-first development
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.17+
+- npm 9.x+
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:rfecommunity/rfec.git
+cd rfec
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Set up Git hooks (automatically configured after install):
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+npm run prepare
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📋 Available Scripts
 
-## Learn More
+In the project directory, you can run:
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev`: Start development server with Turbopack
+- `npm run build`: Create production build
+- `npm run start`: Start production server
+- `npm run lint`: Check for ESLint errors
+- `npm run prepare`: Set up Git hooks (auto-runs after install)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 🔧 Code Quality
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project uses:
 
-## Deploy on Vercel
+- ESLint with Next.js core rules + Prettier integration
+- Pre-commit hooks with `lint-staged`
+- Conventional commit message validation via `commitlint`
+- TypeScript strict type checking
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Git hooks will automatically:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Format code with Prettier
+- Run ESLint checks
+- Validate commit messages
+
+## 🖌 UI Components Architecture
+
+This project uses [shadcn/ui](https://ui.shadcn.com/) components with the following stack:
+
+- **Radix UI Primitives** - Unstyled, accessible component primitives
+- **Tailwind CSS** - Utility-first styling with `tailwind-merge` for class combination
+- **CLSX** - Conditional class handling
+- **CVA (Class Variance Authority)** - Type-safe component variants
+- **Slot** - Radix Slot utility for component composition
+
+## 🧩 Working with Components
+
+### Component Structure
+
+Components follow shadcn/ui conventions:
+
+```bash
+src/
+  components/
+    ui/
+      button.tsx  # Component logic
+    your-components.tsx
+```
+
+### Creating New Components
+
+1. Use the shadcn CLI (if configured):
+
+```bash
+npx shadcn-ui@latest add button
+```
+
+2. Manual creation example:
+
+```typescript
+// components/ui/custom-card.tsx
+import { cva } from 'class-variance-authority'
+
+const cardVariants = cva('rounded-lg border bg-card text-card-foreground', {
+  variants: {
+    variant: {
+      default: 'shadow-sm',
+      elevated: 'shadow-lg'
+    }
+  }
+})
+```
+
+## 🤝 Contributing
+
+1. Create your feature branch:
+
+```bash
+git checkout -b feature/your-feature
+```
+
+2. Commit your changes (follow conventional commit format):
+
+```bash
+git commit -m "feat: add new component"
+```
+
+3. Push to the branch:
+
+```bash
+git push origin feature/your-feature
+```
+
+4. Open a Pull Request
+
+---
