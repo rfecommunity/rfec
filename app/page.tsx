@@ -1,4 +1,3 @@
-import Footer from '@/components/footer'
 import Hero from '@/components/hero'
 import Join from '@/components/join'
 import Mission from '@/components/mission'
@@ -13,7 +12,6 @@ export default function Home() {
       <Mission />
       <Join />
       <Partners />
-      <Footer />
     </>
   )
 }
