@@ -126,3 +126,7 @@
     @apply bg-background text-foreground scroll-smooth antialiased;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
