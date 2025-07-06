@@ -18,7 +18,7 @@ const Join = () => {
       </div>
 
       <div className="container mx-auto text-white flex flex-col justify-center items-start h-full lg:min-h-[500px] lg:max-w-2xl">
-        <TitleWithTag className="text-3xl lg:text-4xl mb-6">
+        <TitleWithTag className="text-2xl lg:text-3xl mb-6">
           Junte-se à comunidade!
         </TitleWithTag>
         <p className="text-base lg:text-lg mb-8">

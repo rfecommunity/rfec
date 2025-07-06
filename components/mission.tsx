@@ -7,7 +7,7 @@ const Mission = () => {
     <section id="mission" className="px-5 py-20 bg-white text-black">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div className="lg:order-1 order-2">
+          <div className="lg:order-1">
             <TitleWithTag className="text-2xl mb-6 xl:text-3xl">
               Nossa Missão
             </TitleWithTag>

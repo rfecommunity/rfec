@@ -72,8 +72,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-6 pt-6 border-t border-muted-foreground flex flex-col md:flex-row lg:items-center justify-between lg:justify-center ">
-          <p className="text-xs text-muted-foreground lg:text-center">
+        <div className="mt-6 pt-6 border-t border-muted-foreground flex flex-col md:flex-row lg:items-center justify-between lg:justify-center">
+          <p className="text-xs text-muted-foreground text-center">
             &copy; 2025 Recife Front-End Community. <br /> Todos os direitos
             reservados.
           </p>
