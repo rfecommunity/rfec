@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import TitleWithTag from './title-with-tag'
 
 const WhoWeAre = () => {
@@ -7,7 +8,9 @@ const WhoWeAre = () => {
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <TitleWithTag className="text-2xl mb-6 xl:text-3xl">Quem Somos</TitleWithTag>
+            <TitleWithTag className="text-2xl mb-6 xl:text-3xl">
+              Quem Somos
+            </TitleWithTag>
             <p className="text-base mb-6 max-w-md">
               Uma comunidade que prioriza aprendizado, conexão e troca de
               experiências para devs front-end e entusiastas de tecnologia no

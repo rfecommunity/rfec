@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import TitleWithTag from './title-with-tag'
 import { Button } from './ui/button'
 
