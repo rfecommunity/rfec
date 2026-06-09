@@ -1,4 +1,5 @@
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react'
+import Link from 'next/link'
 
 import RFECLogo from './logo'
 
@@ -53,21 +54,24 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold mb-2">Sobre a RFEC</h4>
             <nav className="flex flex-col space-y-2">
-              <a href="#" className="text-sm hover:underline">
+              <Link href="/" className="text-sm hover:underline">
                 Início
-              </a>
-              <a href="#about" className="text-sm hover:underline">
+              </Link>
+              <Link href="/eventos" className="text-sm hover:underline">
+                Eventos
+              </Link>
+              <Link href="/#about" className="text-sm hover:underline">
                 Quem Somos
-              </a>
-              <a href="#mission" className="text-sm hover:underline">
+              </Link>
+              <Link href="/#mission" className="text-sm hover:underline">
                 Nossa Missão
-              </a>
-              <a href="#join" className="text-sm hover:underline">
+              </Link>
+              <Link href="/#join" className="text-sm hover:underline">
                 Faça Parte
-              </a>
-              <a href="#partners" className="text-sm hover:underline">
+              </Link>
+              <Link href="/#partners" className="text-sm hover:underline">
                 Parceiros
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
