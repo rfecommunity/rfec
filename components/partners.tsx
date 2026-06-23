@@ -1,84 +1,23 @@
-'use client'
+import { getPartners } from '@/sanity/lib/queries'
 
-import AutoScroll from 'embla-carousel-auto-scroll'
-import Image from 'next/image'
-
+import PartnersCarousel from './partners-carousel'
 import TitleWithTag from './title-with-tag'
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel'
 
-const Partners = () => {
+const Partners = async () => {
+  const partners = await getPartners()
+
   return (
-    <section id="partners" className="px-5 py-20">
+    <section id="partners" className="scroll-mt-20 px-5 py-20 lg:py-28">
       <div className="container mx-auto">
-        <TitleWithTag className="text-2xl mb-6">Parceiros</TitleWithTag>
-        <p className="text-base mb-6">
+        <TitleWithTag className="mb-6 text-2xl md:text-3xl lg:text-4xl">
+          Parceiros
+        </TitleWithTag>
+        <p className="mb-6 text-base md:max-w-2xl md:text-lg">
           Conheça nossos parceiros que colaboram para o sucesso da Recife
           Front-End Community.
         </p>
       </div>
-      <Carousel
-        opts={{
-          align: 'center',
-          loop: true
-        }}
-        plugins={[
-          AutoScroll({
-            active: true,
-            speed: 0.5
-          })
-        ]}
-      >
-        <CarouselContent>
-          <CarouselItem className="basis-1/2">
-            <div className="flex flex-col gap-3 items-center">
-              <Image
-                src="/assets/images/fiap.png"
-                alt="Logo da faculdade FIAP"
-                width={150}
-                height={150}
-                className="rounded-lg"
-              />
-              <p className="font-semibold underline">Faculdade FIAP</p>
-            </div>
-          </CarouselItem>
-          <CarouselItem className="basis-1/2">
-            <div className="flex flex-col gap-3 items-center">
-              <Image
-                src="/assets/images/iv.png"
-                alt="Logo da comunidade IV"
-                width={150}
-                height={150}
-                className="rounded-lg"
-              />
-              <p className="font-semibold underline">Comunidade IV</p>
-            </div>
-          </CarouselItem>
-          <CarouselItem className="basis-1/2">
-            <div className="flex flex-col gap-3 items-center">
-              <Image
-                src="/assets/images/fiap.png"
-                alt="Logo da faculdade FIAP"
-                width={150}
-                height={150}
-                className="rounded-lg"
-              />
-              <p className="font-semibold underline">Faculdade FIAP</p>
-            </div>
-          </CarouselItem>
-          <CarouselItem className="basis-1/2">
-            <div className="flex flex-col gap-3 items-center">
-              <Image
-                src="/assets/images/iv.png"
-                alt="Logo da comunidade IV"
-                width={150}
-                height={150}
-                className="rounded-lg"
-              />
-              <p className="font-semibold underline">Comunidade IV</p>
-            </div>
-          </CarouselItem>
-        </CarouselContent>
-      </Carousel>
+      {partners.length > 0 && <PartnersCarousel partners={partners} />}
     </section>
   )
 }

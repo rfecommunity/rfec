@@ -6,6 +6,9 @@ import { readToken } from './token'
 /** Broad cache tag — revalidated when any event-related content changes. */
 export const EVENTS_TAG = 'events'
 
+/** Cache tag for global site content (homepage imagery, partners). */
+export const SITE_TAG = 'site'
+
 /** Per-event cache tag, e.g. `event:meetup-react-2025`. */
 export function eventTag(slug: string) {
   return `event:${slug}`
