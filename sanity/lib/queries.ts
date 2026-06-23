@@ -1,7 +1,14 @@
 import { defineQuery } from 'next-sanity'
 
-import { EVENTS_TAG, eventTag, sanityFetch } from './fetch'
-import type { EventDetail, EventGallery, EventListItem, TagRef } from './types'
+import { EVENTS_TAG, eventTag, sanityFetch, SITE_TAG } from './fetch'
+import type {
+  EventDetail,
+  EventGallery,
+  EventListItem,
+  HomePage,
+  Partner,
+  TagRef
+} from './types'
 
 /** Shared projection for event cards on the listing page. */
 const CARD_PROJECTION = /* groq */ `
@@ -166,4 +173,37 @@ export async function getEventGallery(
     params: { slug },
     tags: [EVENTS_TAG, eventTag(slug)]
   })
+}
+
+const HOME_PAGE_QUERY = defineQuery(`
+  *[_type == "homePage"][0]{
+    aboutImages,
+    missionImages,
+    joinBackground
+  }
+`)
+
+const PARTNERS_QUERY = defineQuery(`
+  *[_type == "partner" && defined(logo.asset)]
+    | order(coalesce(order, 999) asc, name asc) {
+      _id,
+      name,
+      logo,
+      website
+    }
+`)
+
+export async function getHomePage(): Promise<HomePage | null> {
+  return sanityFetch<HomePage>({
+    query: HOME_PAGE_QUERY,
+    tags: [SITE_TAG]
+  })
+}
+
+export async function getPartners(): Promise<Partner[]> {
+  const partners = await sanityFetch<Partner[]>({
+    query: PARTNERS_QUERY,
+    tags: [SITE_TAG]
+  })
+  return partners ?? []
 }

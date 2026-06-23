@@ -2,6 +2,8 @@ import type { SchemaTypeDefinition } from 'sanity'
 
 import { event } from './documents/event'
 import { eventType } from './documents/eventType'
+import { homePage } from './documents/homePage'
+import { partner } from './documents/partner'
 import { speaker } from './documents/speaker'
 import { sponsor } from './documents/sponsor'
 import { tag } from './documents/tag'
@@ -17,9 +19,11 @@ import { socialLink } from './objects/socialLink'
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     // Documents
+    homePage,
     event,
     speaker,
     sponsor,
+    partner,
     tag,
     eventType,
     // Objects

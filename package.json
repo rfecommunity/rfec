@@ -40,7 +40,8 @@
     "eslint-config-prettier": "^10",
     "husky": "^9",
     "lint-staged": "^15",
-    "prettier": "^3",
+    "prettier": "^3.8.4",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
