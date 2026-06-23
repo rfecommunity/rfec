@@ -2,7 +2,7 @@ import { revalidateTag } from 'next/cache'
 import { type NextRequest, NextResponse } from 'next/server'
 import { parseBody } from 'next-sanity/webhook'
 
-import { EVENTS_TAG, eventTag } from '@/sanity/lib/fetch'
+import { EVENTS_TAG, eventTag, SITE_TAG } from '@/sanity/lib/fetch'
 
 /**
  * Sanity webhook target. On publish/unpublish/delete, Sanity POSTs here with a
@@ -30,15 +30,20 @@ export async function POST(req: NextRequest) {
       return new NextResponse('Bad request: missing _type', { status: 400 })
     }
 
-    // Broad tag covers listing pages, sitemap and tag lists. The second
-    // argument is Next 16's required cache-life profile; 'max' purges the tag
-    // on demand while leaving each fetch's own `revalidate` window in charge of
-    // the time-based safety net.
-    revalidateTag(EVENTS_TAG, 'max')
+    // Global site content (homepage imagery, partners) maps to its own tag.
+    // The second argument is Next 16's required cache-life profile; 'max' purges
+    // the tag on demand while leaving each fetch's own `revalidate` window in
+    // charge of the time-based safety net.
+    if (body._type === 'homePage' || body._type === 'partner') {
+      revalidateTag(SITE_TAG, 'max')
+    } else {
+      // Broad tag covers listing pages, sitemap and tag lists.
+      revalidateTag(EVENTS_TAG, 'max')
 
-    // Narrow tag for the specific event detail/gallery pages.
-    if (body.slug?.current) {
-      revalidateTag(eventTag(body.slug.current), 'max')
+      // Narrow tag for the specific event detail/gallery pages.
+      if (body.slug?.current) {
+        revalidateTag(eventTag(body.slug.current), 'max')
+      }
     }
 
     return NextResponse.json({

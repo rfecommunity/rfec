@@ -133,3 +133,18 @@ export type EventGallery = {
 }
 
 export type EventStatus = 'upcoming' | 'past'
+
+/** Homepage editorial imagery (singleton). */
+export type HomePage = {
+  aboutImages?: SanityImage[]
+  missionImages?: SanityImage[]
+  joinBackground?: SanityImage
+}
+
+/** A community partner shown in the homepage carousel. */
+export type Partner = {
+  _id: string
+  name: string
+  logo?: SanityImage
+  website?: string
+}
